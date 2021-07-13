@@ -1,16 +1,19 @@
-using Bencodex.Types;
+using Libplanet;
 using Libplanet.Assets;
+using Bencodex.Types;
 
-namespace Stellarium.Models
+namespace Stellarium.Models.States
 {
     public sealed class Reserve : Tile
     {
         public Reserve(
             uint galaxyId,
+            Address owner,
+            Address address,
             Position position,
             Currency currency
         )
-            : base(galaxyId, position)
+            : base(galaxyId, owner, address, position)
         {
             Currency = currency;
         }
