@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Bencodex.Types;
 
-namespace Stellarium.Models
+namespace Stellarium.Models.States
 {
     public struct Position
     {
