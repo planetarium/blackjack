@@ -86,8 +86,8 @@ namespace Stellarium.Renderer.Tile
         public static HexagonTile GetTile(Vector2 position)
         {
             var p = position *= 2;
-            var q = Mathf.RoundToInt(_orientation.B0 * p.x + _orientation.B1 * p.y);
-            var r = Mathf.RoundToInt(_orientation.B2 * p.x + _orientation.B3 * p.y);
+            var q = Mathf.RoundToInt(_orientation.B0 * p.x + _orientation.B1 * -p.y);
+            var r = Mathf.RoundToInt(_orientation.B2 * p.x + _orientation.B3 * -p.y);
             return new HexagonTile(q, r, -q - r);
         }
 
@@ -96,7 +96,7 @@ namespace Stellarium.Renderer.Tile
             var x = _orientation.F0 * Q + _orientation.F1 * R;
             var y = _orientation.F2 * Q + _orientation.F3 * R;
 
-            return new Vector2(x, y);
+            return new Vector2(x, -y);
         }
 
         public override bool Equals(object obj)
