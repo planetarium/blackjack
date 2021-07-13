@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Sprite-0003-Sheet_1
+  m_Name: WhiteTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 249474559980975759, guid: b93c68e7929d4c54ea11ae4bd1b249df, type: 3}
+  m_Sprite: {fileID: -2135585597343286014, guid: 9ac783a8324c10e47badb08cc80c6216, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
