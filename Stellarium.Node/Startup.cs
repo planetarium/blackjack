@@ -30,6 +30,7 @@ namespace Stellarium.Node
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                c.UseOneOfForPolymorphism();
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Stellarium.Node", Version = "v1" });
             });
         }

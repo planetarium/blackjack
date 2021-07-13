@@ -1,9 +1,6 @@
 using Bencodex.Types;
-using System.Numerics;
-using System.Collections.Immutable;
-using Libplanet.Assets;
 
-namespace Stellarium.Models.States
+namespace Stellarium.Models.States.Units
 {
     public class Energy
     {
@@ -18,8 +15,10 @@ namespace Stellarium.Models.States
         public long Shield { get; }
 
         public Energy(Bencodex.Types.Dictionary serialized)
+            : this(
+                (Integer)serialized["health"],
+                (Integer)serialized["shield"])
         {
-
         }
 
         public Bencodex.Types.Dictionary Serialize() =>
