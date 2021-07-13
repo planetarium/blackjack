@@ -1,21 +1,24 @@
-﻿using UniRx;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NetworkManager : MonoBehaviour
+namespace Stellarium.Renderer.Networking
 {
-    [SerializeField]
-    private NetworkPoller poller = null;
-
-    [SerializeField]
-    private Text text = null;
-
-    private void Awake()
+    public class NetworkManager : MonoBehaviour
     {
-        poller.StartPolling();
-        poller.postSubject.Subscribe(value =>
+        [SerializeField]
+        private NetworkPoller poller = null;
+
+        [SerializeField]
+        private Text text = null;
+
+        private void Awake()
         {
-            text.text = value;
-        }).AddTo(gameObject);
+            poller.StartPolling();
+            poller.postSubject.Subscribe(value =>
+            {
+                text.text = value;
+            }).AddTo(gameObject);
+        }
     }
 }
