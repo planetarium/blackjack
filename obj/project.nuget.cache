@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "oV9tKdDXdtuoCoMMSnJ5sciA7iQkliCp5iPA6qXYAB+jjBvxPcVPCvrKVn2/VcUNIe32yO7/w3o8mcDD9z4TMw==",
+  "success": true,
+  "projectFilePath": "/Users/dahlia/Projects/stellarium/stellarium.csproj",
+  "expectedPackageFiles": [
+    "/Users/dahlia/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/dahlia/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/dahlia/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/Users/dahlia/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/Users/dahlia/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/Users/dahlia/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
