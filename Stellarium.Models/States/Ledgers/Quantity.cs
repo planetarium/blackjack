@@ -4,9 +4,9 @@ using System.Numerics;
 
 namespace Stellarium.Models.States.Ledgers
 {
-    public sealed class Cost
+    public sealed class Quantity
     {
-        public Cost(Currency resource, BigInteger amount)
+        public Quantity(Currency resource, BigInteger amount)
         {
             Resource = resource;
             Amount = amount;
@@ -15,7 +15,7 @@ namespace Stellarium.Models.States.Ledgers
         public Currency Resource { get; }
         public BigInteger Amount { get; }
 
-        public Cost(Bencodex.Types.Dictionary serialized)
+        public Quantity(Bencodex.Types.Dictionary serialized)
             : this(
                 new Currency(serialized["resource"]),
                 (Integer)serialized["amount"])
@@ -25,6 +25,7 @@ namespace Stellarium.Models.States.Ledgers
         public Bencodex.Types.Dictionary Serialize()
         {
             return Bencodex.Types.Dictionary.Empty
+                .Add("_type", nameof(Quantity))
                 .Add("resource", Resource.Serialize())
                 .Add("amount", (long)Amount);
         }

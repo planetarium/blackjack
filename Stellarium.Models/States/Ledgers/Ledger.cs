@@ -14,10 +14,6 @@ namespace Stellarium.Models.States.Ledgers
     /// </summary>
     public abstract class Ledger
     {
-        // FIXME: Placeholder.
-        public const int MetalWeight = 1;
-        public const int GasWeight = 1;
-
         public Ledger(Address owner, Address address)
         {
         }

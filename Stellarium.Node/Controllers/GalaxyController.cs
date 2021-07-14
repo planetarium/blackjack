@@ -31,8 +31,8 @@ namespace Stellarium.Node.Controllers
             var rng = new Random();
             uint galaxyId = (uint)rng.Next();
             Galaxy galaxy = new Galaxy(galaxyId, new Address());
-            TotalCost totalCost = new TotalCost(new Cost(Resource.Metal, 100), new Cost(Resource.Gas, 50));
-            Consumed consumed = new Consumed(new Address(), new Address(), totalCost);
+            Capacity capacity = new Capacity(new Quantity(Resource.Metal, 100), new Quantity(Resource.Gas, 50), 500);
+            Consumed consumed = new Consumed(new Address(), new Address(), capacity);
             Requirement requirement = new Requirement(1);
             PhysicalStat physicalStat = new PhysicalStat(100, 50, 10);
             Energy energy = new Energy(50, 25);
