@@ -24,7 +24,9 @@ namespace Stellarium.Models.States
                 throw new ArgumentOutOfRangeException(nameof(z));
             }
 
-            Coordinates = new List<int>() { x, y, z };
+            X = x;
+            Y = y;
+            Z = z;
         }
 
         public Position(Bencodex.Types.List serialized)
@@ -44,10 +46,11 @@ namespace Stellarium.Models.States
             ).Max();
         }
 
-        public List<int> Coordinates { get; }
-        public int X => Coordinates[0];
-        public int Y => Coordinates[1];
-        public int Z => Coordinates[2];
+        public IReadOnlyList<int> Coordinates => new int[] { X, Y, Z };
+
+        public int X { get; }
+        public int Y { get; }
+        public int Z { get; }
 
         public Bencodex.Types.List Serialize() =>
             Bencodex.Types.List.Empty.Add(X).Add(Y).Add(Z);

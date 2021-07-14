@@ -3,17 +3,12 @@ using Libplanet.Action;
 
 namespace Stellarium.Models.Actions
 {
-    public class BaseAction : IAction
+    public abstract class BaseAction : IAction
     {
-        IValue IAction.PlainValue => Null.Value;
+        public abstract IValue PlainValue { get; }
 
-        IAccountStateDelta IAction.Execute(IActionContext context)
-        {
-            return context.PreviousStates;
-        }
+        public abstract IAccountStateDelta Execute(IActionContext context);
 
-        void IAction.LoadPlainValue(IValue plainValue)
-        {
-        }
+        public abstract void LoadPlainValue(IValue plainValue);
     }
 }
