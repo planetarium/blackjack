@@ -1,3 +1,4 @@
+using System.Linq;
 using Libplanet.Action;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,8 @@ namespace Stellarium.Node
                 IConfiguration configRoot = context.Configuration;
                 services.Configure<SwarmServiceOptions>(configRoot.GetSection("SwarmService"));
                 services.AddHostedService<SwarmService<T>>();
+                services.AddSingleton(serviceProvider =>
+                    serviceProvider.GetServices<IHostedService>().OfType<SwarmService<T>>().First());
             });
         }
     }
