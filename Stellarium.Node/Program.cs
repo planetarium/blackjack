@@ -2,9 +2,9 @@ using System;
 using System.Threading.Tasks;
 using Libplanet.Blocks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using Serilog.Events;
 using Stellarium.Node.Services;
 using SAction = Libplanet.Action.PolymorphicAction<Stellarium.Models.Actions.BaseAction>;
 
@@ -14,10 +14,11 @@ namespace Stellarium.Node
     {
         public static async Task Main(string[] args)
         {
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.Development.json")
+                .Build();
             Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
+                .ReadFrom.Configuration(configuration)
                 .CreateLogger();
 
             if (Environment.GetEnvironmentVariable("STELLARIUM_MINE_GENESIS") == "1")
