@@ -36,8 +36,10 @@ namespace Stellarium.Models.States
         {
             Dictionary<Position, Tile> result =
                 new Dictionary<Position, Tile>();
-            foreach ((Position position, Address address) in _tiles)
+            foreach (KeyValuePair<Position, Address> pair in _tiles)
             {
+                Position position = pair.Key;
+                Address address = pair.Value;
                 IValue? serialized = stateGetter(address);
                 if (serialized is { } s)
                 {
