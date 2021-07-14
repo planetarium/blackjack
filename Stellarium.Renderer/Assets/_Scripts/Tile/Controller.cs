@@ -10,14 +10,13 @@ namespace Stellarium.Renderer
     {
         [SerializeField]
         private Camera camera;
-        private IEnumerator _mainCoroutine;
+        private Coroutine _mainCoroutine;
 
         public float speed = 1.0f;
 
         private void Start()
         {
-            _mainCoroutine = CoMainMovement();
-            StartCoroutine(_mainCoroutine);
+            _mainCoroutine = StartCoroutine(CoMainMovement());
         }
 
         private void OnDestroy()
@@ -27,7 +26,7 @@ namespace Stellarium.Renderer
 
         private IEnumerator CoMainMovement()
         {
-            while (true)
+            while (gameObject.activeSelf)
             {
                 if (Input.GetMouseButtonDown(0))
                 {
