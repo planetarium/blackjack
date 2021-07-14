@@ -1,5 +1,7 @@
 using System;
+using System.Runtime.Serialization;
 using Libplanet;
+using Stellarium.Models.States.Units;
 
 namespace Stellarium.Models.States
 {
@@ -7,7 +9,11 @@ namespace Stellarium.Models.States
     {
         public uint GalaxyId { get; }
 
-        public Tile(uint galaxyId, Address owner, Address address, Position position)
+        public Tile(
+            uint galaxyId,
+            Address owner,
+            Address address,
+            Position position)
         {
             GalaxyId = galaxyId;
             Owner = owner;

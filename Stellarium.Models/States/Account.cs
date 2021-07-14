@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 using Libplanet;
 using Libplanet.Assets;
 
-namespace Stellarium.Models
+namespace Stellarium.Models.States
 {
     public sealed class Account
     {

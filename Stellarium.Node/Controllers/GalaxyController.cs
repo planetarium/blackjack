@@ -6,9 +6,11 @@ using System.Numerics;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Stellarium.Models.States;
 using Libplanet;
 using Libplanet.Assets;
+using Stellarium.Models.States;
+using Stellarium.Models.States.Ledgers;
+using Stellarium.Models.States.Units;
 
 namespace Stellarium.Node.Controllers
 {
@@ -29,11 +31,13 @@ namespace Stellarium.Node.Controllers
             var rng = new Random();
             uint galaxyId = (uint)rng.Next();
             Galaxy galaxy = new Galaxy(galaxyId, new Address());
-            Cost cost = new Cost(rng.Next(), ImmutableDictionary<Currency, BigInteger>.Empty);
-            Durability durability = new Durability(rng.Next(), rng.Next());
-            Energy energy = new Energy(rng.Next(), rng.Next());
-            Building building = new Building(galaxyId, new Address(), new Address(), Position.Origin, cost, durability, energy);
-            galaxy.AddTile(building);
+            Capacity capacity = new Capacity(new Quantity(Resource.Metal, 100), new Quantity(Resource.Gas, 50), 500);
+            Consumed consumed = new Consumed(new Address(), new Address(), capacity);
+            Requirement requirement = new Requirement(1);
+            PhysicalStat physicalStat = new PhysicalStat(100, 50, 10);
+            Energy energy = new Energy(50, 25);
+            Ship ship = new Ship(galaxyId, new Address(), new Address(), Position.Origin, consumed, requirement, physicalStat, energy);
+            galaxy.AddTile(ship);
             return galaxy;
         }
     }

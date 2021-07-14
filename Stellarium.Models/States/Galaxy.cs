@@ -32,13 +32,13 @@ namespace Stellarium.Models.States
 
         public IImmutableList<Tile> Tiles => GetTiles(address => null).Values.ToImmutableList();
 
-        public IImmutableDictionary<Position, Tile> GetTiles(AccountStateGetter getter)
+        public IImmutableDictionary<Position, Tile> GetTiles(AccountStateGetter stateGetter)
         {
             Dictionary<Position, Tile> result =
                 new Dictionary<Position, Tile>();
             foreach ((Position position, Address address) in _tiles)
             {
-                IValue? serialized = getter(address);
+                IValue? serialized = stateGetter(address);
                 if (serialized is { } s)
                 {
                     // Tile t = TileSerializer.Deserialize(serialized);
