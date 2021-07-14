@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 namespace Stellarium.Node.Services
 {
-    public class SwarmService<T> : BackgroundService, IDisposable
+    public class SwarmService<T> : BackgroundService
         where T : IAction, new()
     {
         public IStore Store { get; }
@@ -60,10 +60,6 @@ namespace Stellarium.Node.Services
                     {
                         BlockRenderer = (oldTip, newTip) =>
                         {
-                            if (_miningCancellationTokenSource is { } source)
-                            {
-                                source.Cancel();
-                            }
                         }
                     }
                 }
@@ -131,10 +127,10 @@ namespace Stellarium.Node.Services
 
             if (Mine)
             {
+                _miningCancellationTokenSource =
+                    CancellationTokenSource.CreateLinkedTokenSource(stoppingToken);
                 var mineTask = Task.Run(async () =>
                 {
-                    _miningCancellationTokenSource =
-                        CancellationTokenSource.CreateLinkedTokenSource(stoppingToken);
                     try
                     {
                         CancellationToken cancellationToken = _miningCancellationTokenSource.Token;
@@ -145,6 +141,7 @@ namespace Stellarium.Node.Services
                                 minerAddress,
                                 cancellationToken: cancellationToken
                             );
+                            Thread.Sleep(5000);
                         }
                     }
                     finally
@@ -152,7 +149,8 @@ namespace Stellarium.Node.Services
                         _miningCancellationTokenSource.Dispose();
                         _miningCancellationTokenSource = null;
                     }
-                });
+                },
+                _miningCancellationTokenSource.Token);
                 tasks.Add(mineTask);
             }
 
