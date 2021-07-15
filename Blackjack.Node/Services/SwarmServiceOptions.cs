@@ -20,7 +20,7 @@ namespace Blackjack.Node.Services
             StorePath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "planetarium",
-                "stellarium"
+                "blackjack"
             );
         }
     }

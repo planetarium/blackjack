@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Stellarium.Node": {
+    "Blackjack.Node": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
