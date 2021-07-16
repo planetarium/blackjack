@@ -88,14 +88,14 @@
     }
     .doge {
         position: absolute;
-        bottom: 285px;
+        bottom: 256px;
     }
   </style>
 </head>
 <body>
 <div id="game">
     <div id="doge">
-      <img class="doge" src="images/doge/normal.png" width="100%">
+      <img class="doge" src="images/doge/dogi-01.gif" width="100%">
     </div>
     <div class="dealer-table"></div>
     <div class="dealer cards">
@@ -288,6 +288,7 @@
 
     window.seed = new Date().getTime();
     window.turn = 0;
+    document.querySelectorAll('.doge')[0].src="images/doge/" + (window.seed % 2 ? "dogi-02.gif" : "dogi-01.gif");
 
     var stayGame = function() {
         var data = playGame(window.seed, window.turn);
@@ -295,7 +296,7 @@
         data.house.forEach(function(card, key) {
             document.querySelectorAll('.dealer.cards')[0].innerHTML += '<img class="card '+(key ? '': 'first')+'" src="images/cards/'+card+'.png">';
         });
-        document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win ? "bad.png" : "good.png");
+        document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win && data.houseScore == 21 ? "dogi-07.gif" : (data.win ? "dogi-06.gif" : "dogi-04.gif"));
     }
 
     var displayGame = function() {
@@ -310,6 +311,8 @@
         });
         document.querySelectorAll('.dealer.cards')[0].innerHTML = '<img class="card first" src="images/cards/'+data.house[0]+'.png"><img class="card" src="images/cards/backside.png">';
         if(data.playerScore >= 21) stayGame();
+        else if(data.stayed > 0)
+          document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win ? "dogi-05.gif" : "dogi-03.gif");
     }
     
     displayGame();
