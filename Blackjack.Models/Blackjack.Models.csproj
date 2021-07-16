@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Jint" Version="3.0.0-beta-001" />
     <PackageReference Include="Libplanet" Version="0.12.0-nightly.20210711" />
   </ItemGroup>
 

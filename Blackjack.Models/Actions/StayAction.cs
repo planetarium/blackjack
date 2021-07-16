@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Bencodex.Types;
 using Blackjack.Models.States;
+using Jint;
 using Libplanet;
 using Libplanet.Action;
 using Libplanet.Blockchain.Renderers.Debug;
@@ -16,11 +17,15 @@ namespace Blackjack.Models.Actions
 
         private long _stay;
 
+        private BlackjackJS _blackjackEngine;
+
         public StayAction()
         {
+            _blackjackEngine = new BlackjackJS();
         }
 
         public StayAction(Address address, long stay)
+            :this()
         {
             _address = address;
             _stay = stay;
@@ -77,8 +82,17 @@ namespace Blackjack.Models.Actions
 
         private long BlackJack(long randomSeed, long stay, long money)
         {
-            //TODO: call blackjack JS
-            return 0;
+            var gameResult = _blackjackEngine.PlayGame(randomSeed, stay);
+            if (gameResult.Win == false)
+            {
+                return 0;
+            }
+
+            while (stay-- <= 0)
+            {
+                money *= stay;
+            }
+            return money;
         }
     }
 }
