@@ -140,7 +140,7 @@ namespace Blackjack.Node.Services
                                 minerAddress,
                                 cancellationToken: cancellationToken
                             );
-                            Thread.Sleep(5000);
+                            Thread.Sleep(1000);
                         }
                     }
                     finally
