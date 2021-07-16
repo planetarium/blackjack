@@ -32,7 +32,7 @@ namespace Blackjack.Node
 
             services.AddCors(options =>
             {
-                options.AddPolicy(name: DebugCorsPolicyName, builder => builder.WithOrigins("*"));
+                options.AddPolicy(name: DebugCorsPolicyName, builder => builder.WithOrigins("*").WithMethods("GET", "POST").WithHeaders("Content-Type"));
             });
             services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
         }

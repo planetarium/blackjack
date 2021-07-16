@@ -9,6 +9,7 @@ using Libplanet.Crypto;
 using Microsoft.AspNetCore.Mvc;
 using Libplanet.Tx;
 using Microsoft.AspNetCore.Cors;
+using Serilog;
 using SAction = Libplanet.Action.PolymorphicAction<Blackjack.Models.Actions.BaseAction>;
 
 namespace Blackjack.Node.Controllers
@@ -44,6 +45,7 @@ namespace Blackjack.Node.Controllers
             var tx = CreateTx(privateKey, action);
             _swarmService.BlockChain.StageTransaction(tx);
             var privateKeyStr = ByteUtil.Hex(privateKey.ByteArray);
+            Log.Debug("PRIVATEKEY: ", privateKey);
             return privateKeyStr;
         }
 

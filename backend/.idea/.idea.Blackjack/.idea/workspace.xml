@@ -7,9 +7,9 @@
     <list default="true" id="6d78b24a-edd3-4c1f-8b7e-61aebf3f4801" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Blackjack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blackjack/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack.Node/Services/SwarmService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Services/SwarmService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blackjack.Node/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04192994-B6B8-4F20-9A68-99F7742BDDB4/A/CorsOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blackjack.Node/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B25F7BC2-8178-476F-9377-5D7C00EBAAFC/bb/4e274543/PrivateKey.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04192994-B6B8-4F20-9A68-99F7742BDDB4/3/CorsMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/04192994-B6B8-4F20-9A68-99F7742BDDB4/6/EnableCorsAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DDB9DC8-2575-464F-8029-70025A6D5443/1f/e434c386/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blackjack.Node/Services/SwarmServiceOptions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -44,9 +45,10 @@
       <option value="$PROJECT_DIR$/Blackjack.Node/Program.cs" />
       <option value="$PROJECT_DIR$/Blackjack.Node/Controllers/BlockController.cs" />
       <option value="$PROJECT_DIR$/../frontend/test.js" />
+      <option value="$PROJECT_DIR$/Blackjack.Node/Startup.cs" />
+      <option value="$PROJECT_DIR$/Blackjack.Node/Services/SwarmService.cs" />
       <option value="$PROJECT_DIR$/../frontend/index.html" />
       <option value="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" />
-      <option value="$PROJECT_DIR$/Blackjack.Node/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vLUVuu4DArLpLgzO741Tw5znsG" />
@@ -153,9 +155,15 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/../frontend/index.html</url>
-          <line>194</line>
+          <line>204</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../frontend/index.html</url>
+          <line>162</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
