@@ -1,4 +1,5 @@
-﻿using Blackjack.Node.Services;
+﻿using System.Net;
+using Blackjack.Node.Services;
 using Microsoft.AspNetCore.Mvc;
 using Libplanet.Tx;
 using SAction = Libplanet.Action.PolymorphicAction<Blackjack.Models.Actions.BaseAction>;
@@ -28,6 +29,7 @@ namespace Blackjack.Node.Controllers
         [Route("Height")]
         public long Get()
         {
+            StatusCode((int) HttpStatusCode.OK);
             return _swarmService.BlockChain.Tip.Index;
         }
 

@@ -5,22 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d78b24a-edd3-4c1f-8b7e-61aebf3f4801" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Blackjack.Models/Actions/BlackjackJS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blackjack.Models/Actions/StayAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Models/Actions/StayAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blackjack.Models/Blackjack.Models.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Models/Blackjack.Models.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blackjack.Node/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Blackjack/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Blackjack/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlockController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack.Node/Controllers/BlockController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Blackjack.Node/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A2322B6F-0F80-4A75-AE25-FF8A43407104/8c/185ef47c/JsValue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blackjack.Node/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B25F7BC2-8178-476F-9377-5D7C00EBAAFC/bb/4e274543/PrivateKey.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DDB9DC8-2575-464F-8029-70025A6D5443/1f/e434c386/HttpStatusCode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blackjack.Node/Services/SwarmServiceOptions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -30,22 +39,31 @@
       <option value="$PROJECT_DIR$/Blackjack.Models/Actions/BlackjackJS.cs" />
       <option value="$PROJECT_DIR$/Blackjack.Models/Actions/StayAction.cs" />
       <option value="$PROJECT_DIR$/Blackjack.Node/Program.cs" />
+      <option value="$PROJECT_DIR$/Blackjack.Node/Controllers/BlockController.cs" />
+      <option value="$PROJECT_DIR$/Blackjack.Node/Controllers/BlackJackController.cs" />
+      <option value="$PROJECT_DIR$/../frontend/test.js" />
+      <option value="$PROJECT_DIR$/../frontend/index.html" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vLUVuu4DArLpLgzO741Tw5znsG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34978673" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="RiderIisExpressOptionsPageId" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Blackjack.Node: Blackjack.Node">
+  <component name="RunManager" selected="Node.js.test.js">
     <configuration name="Blackjack.Node: Blackjack.Node" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Blackjack.Node/Blackjack.Node.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -76,10 +94,19 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$/../frontend">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue=".NET Launch Settings Profile.Blackjack.Node: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.Blackjack.Node: Blackjack.Node" />
+      <item itemvalue="Node.js.test.js" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.test.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +121,8 @@
       <workItem from="1626340968568" duration="516000" />
       <workItem from="1626341548070" duration="1467000" />
       <workItem from="1626398787939" duration="6447000" />
+      <workItem from="1626411555445" duration="853000" />
+      <workItem from="1626412435386" duration="6057000" />
     </task>
     <servers />
   </component>
@@ -110,8 +139,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../frontend/index.html</url>
+          <line>191</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

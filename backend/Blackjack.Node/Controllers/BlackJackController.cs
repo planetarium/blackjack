@@ -36,13 +36,14 @@ namespace Blackjack.Node.Controllers
 
         [HttpPost]
         [Route("Standby")]
-        public Transaction<SAction> Post([FromBody] StandbyRequest request)
+        public string Post()
         {
-            var privateKey = new PrivateKey(ByteUtil.ParseHex(request.PrivateKey));
+            var privateKey = new PrivateKey();
             var action = new StandbyAction(privateKey.ToAddress());
             var tx = CreateTx(privateKey, action);
             _swarmService.BlockChain.StageTransaction(tx);
-            return tx;
+            var privateKeyStr = ByteUtil.Hex(privateKey.ByteArray);
+            return privateKeyStr;
         }
 
         [HttpPost]
@@ -89,6 +90,7 @@ namespace Blackjack.Node.Controllers
                 _swarmService.BlockChain.Tip.Hash);
             if (state is { })
             {
+                StatusCode((int) HttpStatusCode.OK);
                 return new BlackJackAccountState((Dictionary) state);
             }
 
@@ -98,6 +100,14 @@ namespace Blackjack.Node.Controllers
                 BlackJackAccountState.AccountStatus.StandBy,
                 0
             );
+        }
+
+        [HttpGet]
+        [Route("Address/{privateKeyStr}")]
+        public string GetAddress(string privateKeyStr)
+        {
+            var privateKey = new PrivateKey(ByteUtil.ParseHex(privateKeyStr));
+            return ByteUtil.Hex(privateKey.PublicKey.ToAddress().ByteArray);
         }
 
         public class StartRequest
