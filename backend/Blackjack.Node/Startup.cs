@@ -10,6 +10,8 @@ namespace Blackjack.Node
 {
     public class Startup
     {
+
+        public const string DebugCorsPolicyName = "StellariumDebugCors";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -28,6 +30,10 @@ namespace Blackjack.Node
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Blackjack.Node", Version = "v1" });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: DebugCorsPolicyName, builder => builder.WithOrigins("*"));
+            });
             services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
         }
 
@@ -40,6 +46,8 @@ namespace Blackjack.Node
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Blackjack.Node v1"));
             }
+
+            app.UseCors(DebugCorsPolicyName);
 
             app.UseHttpsRedirection();
 

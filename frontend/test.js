@@ -70,13 +70,6 @@ function logstate(){
 
 
 standby();
-const syncwithchain = async () => {
-    const _sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
-    await start();
-    logstate();
-    await _sleep(3000);
-    await getstate();
-    logstate();
-};
+
 syncwithchain();
 

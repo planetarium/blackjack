@@ -8,6 +8,7 @@ using Libplanet;
 using Libplanet.Crypto;
 using Microsoft.AspNetCore.Mvc;
 using Libplanet.Tx;
+using Microsoft.AspNetCore.Cors;
 using SAction = Libplanet.Action.PolymorphicAction<Blackjack.Models.Actions.BaseAction>;
 
 namespace Blackjack.Node.Controllers

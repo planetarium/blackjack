@@ -134,13 +134,16 @@
             <button onclick="window.turn++; displayGame();">
                 히트 도전
             </button>
+            <button onclick="newgame(); displayGame();">
+                새게임
+            </button>
         </div>
     </div>
 </div>
   <script>
       var request = function(url, method, body, loader){
-          process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-          var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+          NODE_TLS_REJECT_UNAUTHORIZED = 0;
+          // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
           var httpRequest = new XMLHttpRequest();
 
           function responseResponse(){
@@ -376,11 +379,19 @@
         else if(data.stayed > 0)
           document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win ? "dogi-05.gif" : "dogi-03.gif");
     }
-
-    standby();
-    syncwithchain();
-    window.seed = randomSeed;
-    displayGame();
+      standby();
+    
+      const syncwithchain = async () => {
+          const _sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+          await start();
+          await _sleep(3000);
+          await getstate();
+      };
+    var newgame = function(){
+        standby();
+        syncwithchain();
+        window.seed = randomSeed;
+    }
   </script>
 </body>
 </html>
