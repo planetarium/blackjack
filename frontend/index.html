@@ -134,10 +134,84 @@
             <button onclick="window.turn++; displayGame();">
                 히트 도전
             </button>
+            <button onclick="stay(window.turn++); start(); displayGame();">
+                새게임
+            </button>
         </div>
     </div>
 </div>
   <script>
+      var request = function(url, method, obj, loader){
+          NODE_TLS_REJECT_UNAUTHORIZED = 0;
+          // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+          var httpRequest = new XMLHttpRequest();
+
+          function responseResponse(){
+              if (httpRequest.readyState === httpRequest.DONE) {
+                  loader(httpRequest.responseText);
+              }
+          }
+
+          httpRequest.open(method, "https://localhost:5001/" + url, false);
+          httpRequest.onreadystatechange = responseResponse;
+          httpRequest.setRequestHeader("Content-Type", "application/json");
+
+          httpRequest.send(JSON.stringify(obj));
+      }
+      var privatekey = "";
+      var address = "";
+      var blockHeight = 0;
+      var moneyEarned;
+      var moneyCumulated;
+      var cumulatingSince;
+      var randomSeed;
+      var gamestatus = 0;
+      var standby = function(){
+          request("game/standby", "POST", "", function(text){
+              privatekey = text;
+          })
+          request("game/address/" + privatekey, "GET", "", function(text){
+              address = text;
+          })
+          request("block/height", "GET", "", function(text){
+              blockHeight = text;
+          })
+      }
+
+      var start = function(){
+          var obj = {
+              "privateKey": privatekey,
+          };
+          
+          request("game/start", "POST", obj, function(text){
+          })
+      }
+
+      var stay = function(stay){
+          var obj = {
+              "privateKey": privatekey,
+              "stayed": stay,
+          };
+          request("game/start", "POST", obj, function(text){
+          })
+      }
+
+      var getstate = function(){
+          request("block/height", "GET", "", function(text){
+              blockHeight = text;
+          })
+
+          request("game/accountstate/" + address, "GET", "", function(text){
+              const accountstate = JSON.parse(text);
+              moneyEarned = accountstate.moneyEarned;
+              moneyCumulated = accountstate.moneyCumulated;
+              cumulatingSince = accountstate.cumulatingSince;
+              randomSeed = accountstate.randomSeed;
+              gamestatus = accountstate.status;
+          })
+      }
+        
+
     var shuffle = function(arr,seed){
       var tem, j;
       for(var i=0; i < arr.length; i++){
@@ -285,7 +359,7 @@
       return result;
     }
     console.assert(playGame(100, 1).playerScore == 16);
-
+    
     window.seed = new Date().getTime();
     window.turn = 0;
     document.querySelectorAll('.doge')[0].src="images/doge/" + (window.seed % 2 ? "dogi-02.gif" : "dogi-01.gif");
@@ -297,6 +371,7 @@
             document.querySelectorAll('.dealer.cards')[0].innerHTML += '<img class="card '+(key ? '': 'first')+'" src="images/cards/'+card+'.png">';
         });
         document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win && data.houseScore == 21 ? "dogi-07.gif" : (data.win ? "dogi-06.gif" : "dogi-04.gif"));
+        stay(window.turn);
     }
 
     var displayGame = function() {
@@ -314,8 +389,11 @@
         else if(data.stayed > 0)
           document.querySelectorAll('.doge')[0].src="images/doge/" + (data.win ? "dogi-05.gif" : "dogi-03.gif");
     }
-    
-    displayGame();
+      standby();
+      setTimeout(start, 2000);
+      setTimeout(getstate, 4000);
+      setTimeout(displayGame, 6000);
+
   </script>
 </body>
 </html>
